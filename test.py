@@ -13,103 +13,7 @@ import numpy as np
 # train_generator = image_data_generator.flow_from_directory("archive",target_size=(64, 64),batch_size=1,save_to_dir='pic')
 #
 # print(train_generator.next())
-# x = ["中国结",
-# "仪表盘",
-# "公交卡",
-# "冰箱",
-# "创可贴",
-# "刺绣",
-# "剪纸",
-# "印章",
-# "卷尺",
-# "双面胶",
-# "口哨",
-# "啤酒",
-# "安全帽",
-# "开瓶器",
-# "手掌印",
-# "打字机",
-# "护腕",
-# "拖把",
-# "挂钟",
-# "排风机",
-# "文具盒",
-# "日历",
-# "本子",
-# "档案袋",
-# "棉棒",
-# "樱桃",
-# "毛线",
-# "沙包",
-# "沙拉",
-# "海报",
-# "海苔",
-# "海鸥",
-# "漏斗",
-# "烛台",
-# "热水袋",
-# "牌坊",
-# "狮子",
-# "珊瑚",
-# "电子秤",
-# "电线",
-# "电饭煲",
-# "盘子",
-# "篮球",
-# "红枣",
-# "红豆",
-# "红酒",
-# "绿豆",
-# "网球拍",
-# "老虎",
-# "耳塞",
-# "航母",
-# "苍蝇拍",
-# "茶几",
-# "茶盅",
-# "药片",
-# "菠萝",
-# "蒸笼",
-# "薯条",
-# "蚂蚁",
-# "蜜蜂",
-# "蜡烛",
-# "蜥蜴",
-# "订书机",
-# "话梅",
-# "调色板",
-# "跑步机",
-# "路灯",
-# "辣椒酱",
-# "金字塔",
-# "钟表",
-# "铃铛",
-# "锅铲",
-# "锣",
-# "锦旗",
-# "雨靴",
-# "鞭炮",
-# "风铃",
-# "高压锅",
-# "黑板",
-# "龙舟"]
-# maps = {}
-# for i in range(len(x)):
-#     maps[i] = x[i]
-#
-# print(maps)
-#
-import json
-# with open('key_map.json','w') as fd:
-#     json.dump(maps,fd)
-
-
-# m = {}
-# with open('key_map.json','r') as fd:
-#     m = json.load(fd)
-#     print(m)
-
-'''x = ["中国结",
+x = ["中国结",
 "仪表盘",
 "公交卡",
 "冰箱",
@@ -188,19 +92,23 @@ import json
 "风铃",
 "高压锅",
 "黑板",
-"龙舟"]'''
-import json,os
+"龙舟"]
 maps = {}
-g = os.walk("archive")
-for path,dir_list,file_list in g:
-    for i in range(len(dir_list)):
-        maps[i] = dir_list[i]
-    break
+for i in range(len(x)):
+    maps[x[i]] = i
+
 print(maps)
 
-with open('key_map.json','w') as fd:
-    json.dump(maps,fd)
-os._exit(0)
+# import json
+# with open('key_map.json','w') as fd:
+#     json.dump(maps,fd,ensure_ascii=False,)
+# m = {}
+# with open('key_map.json','r') as fd:
+#     m = json.load(fd)
+#     print(m)
+
+
+
 
 import os
 from PIL import Image
@@ -235,7 +143,7 @@ image_generator = ImageDataGenerator(rotation_range=25,
                          horizontal_flip=True,
                          fill_mode="nearest")
 
-generator = image_generator.flow(x, y, batch_size=1)
+generator = image_generator.flow(x, y, batch_size=32)
 m = x
 n = y
 for batch in range(1,5,2):
