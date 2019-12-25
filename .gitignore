@@ -1,0 +1,4 @@
+*.npz
+.idea
+archive
+.DS_Store
