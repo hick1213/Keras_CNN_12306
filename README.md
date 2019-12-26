@@ -65,5 +65,6 @@ plt.plot(history.history[val_key])
 
 
 ### 附上数据集
-https://www.kaggle.com/leehomwang/12306-data
-https://www.kaggle.com/libowei/12306-captcha-image
+增强图片数据集:https://www.kaggle.com/leehomwang/12306-data
+
+图片:https://www.kaggle.com/libowei/12306-captcha-image
