@@ -62,3 +62,8 @@ plt.plot(history.history[val_key])
 
 ### 后续
 训练完成之后发生了一件非常沙雕的事情，acc达到了99.7%，但是验证图片全部是同一个idx，一度怀疑是训练集数据有问题，查了好久之后发现原来输入的验证图片没有进行归一化😂
+
+
+### 附上数据集
+https://www.kaggle.com/leehomwang/12306-data
+https://www.kaggle.com/libowei/12306-captcha-image
